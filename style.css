@@ -54,6 +54,21 @@ h3 {
 }
 
 /* EXPERIENCES PRO */
+#pro-for-svg-container {
+  position: relative;
+}
+#pro-for-svg-container::before {
+    position: absolute;
+  content: "";
+    top: 0.3rlh;
+  left: -1.7ch;
+  background-image: url("./cone.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1rlh;
+  aspect-ratio: 1;
+}
+
 #pro {
   grid-column: 1 / 2;
 }
@@ -85,6 +100,22 @@ h2 {
 #ecole {
   grid-column: 2 / 3;
 }
+
+#diplomes-container-for-svg{
+    position: relative;
+}
+
+#diplomes-container-for-svg::before {
+    position: absolute;
+  content: "";
+    top: 0.3rlh;
+  left: -1.7ch;
+  background-image: url("./sun.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1rlh;
+  aspect-ratio: 1;
+}
 .ecole-bloc {
   margin-top: calc(0.25 * var(--rythme));
 }
@@ -97,13 +128,27 @@ h2 {
 #competences {
   margin-top: calc(2 * var(--rythme));
 }
-
+#competences-container-for-svg{
+    position: relative;
+}
+#competences-container-for-svg::before {
+    position: absolute;
+  content: "";
+    top: 0.4rlh;
+  left: -1.7ch;
+  background-image: url("./triangle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1rlh;
+  aspect-ratio: 1;
+}
 #competences > * {
   margin-top: calc(0.25 * var(--rythme));
 }
 
 #competences h3 {
   font-weight: 500;
+  font-size: calc(.75*var(--rythme));
 }
 
 #competences-details {
@@ -118,14 +163,30 @@ h2 {
 
 /* CERTIF */
 #certifications {
-    margin-top: calc(2*var(--rythme));
+  margin-top: calc(2 * var(--rythme));
+}
+
+#certifications-container-for-svg {
+  position: relative;
+}
+
+#certifications-container-for-svg::before {
+  position: absolute;
+  content: "";
+  top: 0.4rlh;
+  left: -1.7ch;
+  transform: rotate(90deg);
+  background-image: url("./goutte.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1rlh;
+  aspect-ratio: 1;
 }
 
 #certifications time {
-    display: block;
-    color: var(--gris90pourcent);
-    margin-top: calc(0.25 * var(--rythme));
-
+  display: block;
+  color: var(--gris90pourcent);
+  margin-top: calc(0.25 * var(--rythme));
 }
 
 :root {
