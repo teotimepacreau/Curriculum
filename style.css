@@ -1,403 +1,429 @@
-.container-cv {
-  font-family: "SpaceGrotesk";
-  padding: var(--rythme);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  column-gap: calc(3 * var(--rythme));
+@charset "UTF-8";
+@page {
+  size: A4;
+  margin: 10mm 10mm;
 }
-
-i {
-  font-style: oblique;
-}
-
-#photo {
-  filter: grayscale(1);
-  max-width: calc(7 * var(--rythme));
-  aspect-ratio: 1;
-}
-
-#photo-and-contacts {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#contact span {
-  display: block;
-}
-
-#head h1 {
-  font-size: calc(1.25 * var(--rythme));
-  font-weight: 700;
-}
-
-h1,
-h2,
-h3 {
-  letter-spacing: -0.07rem;
-}
-
-#head > * + * {
-  margin-top: var(--rythme);
-}
-
-#contact-details {
-  margin-top: var(--rythme);
-}
-
-#content {
-  margin-top: calc(2 * var(--rythme));
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: 1 / 3;
-}
-
-/* EXPERIENCES PRO */
-#pro-for-svg-container {
-  position: relative;
-}
-#pro-for-svg-container::before {
-    position: absolute;
-  content: "";
-    top: 0.3rlh;
-  left: -1.7ch;
-  background-image: url("./cone.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 1rlh;
-  aspect-ratio: 1;
-}
-
-#pro {
-  grid-column: 1 / 2;
-}
-
-h2 {
-  font-size: calc(1.25 * var(--rythme));
-  font-weight: 700;
-}
-
-.experience-bloc {
-  margin-top: var(--rythme);
-}
-.experience-bloc h3 {
-  font-size: calc(1.125 * var(--rythme));
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.1rem;
-}
-
-.experience-bloc > * {
-  margin-top: calc(0.25 * var(--rythme));
-}
-
-.annee-et-entreprise {
-  color: var(--gris90pourcent);
-}
-
-/* ECOLE */
-#ecole {
-  grid-column: 2 / 3;
-}
-
-#diplomes-container-for-svg{
-    position: relative;
-}
-
-#diplomes-container-for-svg::before {
-    position: absolute;
-  content: "";
-    top: 0.3rlh;
-  left: -1.7ch;
-  background-image: url("./sun.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 1rlh;
-  aspect-ratio: 1;
-}
-.ecole-bloc {
-  margin-top: calc(0.25 * var(--rythme));
-}
-
-.annne-et-nom-ecole {
-  color: var(--gris90pourcent);
-}
-
-/* COMPETENCE */
-#competences {
-  margin-top: calc(2 * var(--rythme));
-}
-#competences-container-for-svg{
-    position: relative;
-}
-#competences-container-for-svg::before {
-    position: absolute;
-  content: "";
-    top: 0.4rlh;
-  left: -1.7ch;
-  background-image: url("./triangle.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 1rlh;
-  aspect-ratio: 1;
-}
-#competences > * {
-  margin-top: calc(0.25 * var(--rythme));
-}
-
-#competences h3 {
-  font-weight: 500;
-  font-size: calc(.75*var(--rythme));
-}
-
-#competences-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: calc(0.5 * var(--rythme));
-}
-
-#competences-title-to-up {
-  margin-top: calc(0.5 * var(--rythme));
-}
-
-/* CERTIF */
-#certifications {
-  margin-top: calc(2 * var(--rythme));
-}
-
-#certifications-container-for-svg {
-  position: relative;
-}
-
-#certifications-container-for-svg::before {
-  position: absolute;
-  content: "";
-  top: 0.4rlh;
-  left: -1.7ch;
-  transform: rotate(90deg);
-  background-image: url("./goutte.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 1rlh;
-  aspect-ratio: 1;
-}
-
-#certifications time {
-  display: block;
-  color: var(--gris90pourcent);
-  margin-top: calc(0.25 * var(--rythme));
-}
-
-:root {
-  --rythme: 1rlh;
-  --bg: oklch(99% 0.006 200);
-  --gris: oklch(50% 0.01 200);
-  --gris2pourcent: oklch(from var(--gris) l c h / 2%);
-  --gris5pourcent: oklch(from var(--gris) l c h / 5%);
-  --gris50pourcent: oklch(from var(--gris) l c h / 50%);
-  --gris80pourcent: oklch(from var(--gris) l c h / 80%);
-  --gris90pourcent: oklch(from var(--gris) l c h / 90%);
-  --red: oklch(40% 0.3 20);
-  --orange: oklch(90% 0.37 85 / 85%);
-  --yellow: oklch(87.82% 0.1933 115.55);
-  --green: oklch(40% 0.3 140);
-  --shadow: oklch(5% 0.02 200 / 15%);
-}
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
-
-/* Inner quote marks, native black white color-scheme, Prevent font size inflation */
-html {
-  hanging-ponctuation: first last;
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
+@media print {
+  body {
+    font-size: calc(0.59 * var(--rythme));
+    text-rendering: geometricPrecision;
+    font-weight: 300;
   }
-}
 
-/* Remove default margin in favour of better control in authored CSS */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
+  .container-cv {
+    font-family: "SpaceGrotesk";
+    padding: var(--rythme);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: calc(2.5 * var(--rythme));
+  }
 
-ul,
-ol {
-  list-style: none;
-}
+  i {
+    font-style: oblique;
+  }
 
-/* Set core body defaults */
-body {
-  font-family: system-ui, "Segoe UI", "Helvetica Neue", sans-serif;
-  min-height: 100dvh;
-}
+  #photo {
+    filter: grayscale(1);
+    max-width: calc(7 * var(--rythme));
+    aspect-ratio: 1;
+  }
 
-/* Set shorter line heights on headings and text-wrap */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.3;
-  text-wrap: balance;
-}
+  #photo-and-contacts {
+    display: flex;
+    gap: var(--rythme);
+    justify-content: space-between;
+    align-items: center;
+  }
 
-a {
-  color: currentColor;
-  text-underline-offset: 0.3ex;
-}
+  #head h1 {
+    font-size: calc(1.25 * var(--rythme));
+    font-weight: 800;
+    line-height: 1.05;
+  }
 
-p,
-li {
-  line-height: 1.5;
-  text-wrap: pretty;
-}
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.07rem;
+  }
 
-button {
-  cursor: pointer;
-}
+  #head > * + * {
+    margin-top: var(--rythme);
+  }
 
-/* Make images easier to work with */
-img,
-picture,
-svg,
-video {
-  max-width: 100%;
-  display: block;
-}
+  #contact-details {
+    margin-top: var(--rythme);
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.125*var(--rythme));
+  }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10rem;
-}
+  #contact-details > * {
+    line-height: .75rlh;
+  }
 
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
-}
+  #content {
+    margin-top: calc(1 * var(--rythme));
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / 3;
+  }
 
-/* More consistent, styleable hr*/
-hr {
-  border-width: 1px 0 0 0;
-  color: inherit;
-  height: 0;
-  overflow: visible;
-}
+  /* EXPERIENCES PRO */
+  #pro-for-svg-container {
+    position: relative;
+  }
+  #pro-for-svg-container::before {
+    position: absolute;
+    content: "";
+    top: 0.4rlh;
+    left: -1.35ch;
+    background-image: url("./cone.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: .8rlh;
+    aspect-ratio: 1;
+  }
 
-/* HIDING VISUALLY BUT ACCESSIBLE */
-.sr-only {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-  white-space: nowrap !important;
-}
+  #pro {
+    grid-column: 1 / 2;
+  }
 
-input[type="checkbox"] {
-  width: calc(0.6 * var(--rythme)); /* Adjust the width */
-  height: calc(0.6 * var(--rythme)); /* Adjust the height */
-}
+  h2 {
+    font-size: calc(1.25 * var(--rythme));
+    font-weight: 700;
+  }
 
-input[type="search"] {
-  appearance: none;
-  border: none;
-  outline: none;
-}
+  .experience-bloc {
+    margin-top: calc(0.75*var(--rythme));
+  }
+  .experience-bloc h3 {
+    font-size: calc(1 * var(--rythme));
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.07rem;
+  }
 
-input[type="file"] {
-  appearance: none;
-  border: none;
-  background-color: var(--bg);
-  border-radius: 0.2rem 0.2rem 0 0;
-  transition: all 0.2s ease-out;
-}
+  .experience-bloc > *:not(h3) {
+    margin-top: calc(0.25 * var(--rythme));
+  }
 
-input[type="date"] {
-  border: 3px ridge transparent;
-  border-radius: 0.2rem;
-  background-color: var(--accentwith10opacity);
-  box-shadow: none;
-  outline: none;
-  padding: calc(0.25 * var(--rythme));
-  color: var(--surface1with90opacity);
-  transition: all 0.2s ease-out;
-}
+  .annee-et-entreprise {
+    color: var(--gris);
+  }
 
-*:focus-visible {
-  transition: all 0.2s ease;
-  border-radius: inherit;
-}
+  /* ECOLE */
+  #ecole {
+    grid-column: 2 / 3;
+  }
 
-input[type="radio"]:focus-visible {
-  box-shadow: none;
-  outline-offset: 4px;
-  outline-color: var(--surface1);
-}
+  #diplomes-container-for-svg {
+    position: relative;
+  }
 
-input[type="checkbox"]:focus-visible {
-  box-shadow: none;
-  outline-offset: 4px;
-  outline-color: var(--surface1);
-}
+  #diplomes-container-for-svg::before {
+    position: absolute;
+    content: "";
+    top: 0.4rlh;
+    left: -1.35ch;
+    background-image: url("./sun.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: .8rlh;
+    aspect-ratio: 1;
+  }
+  .ecole-bloc {
+    margin-top: calc(0.25 * var(--rythme));
+  }
 
-dialog button:focus-visible {
-  box-shadow: none;
-  outline: 1px ridge var(--accent);
-  outline-offset: 4px;
-  border-radius: 0.4rem;
-}
+  .annne-et-nom-ecole {
+    color: var(--gris);
+  }
 
-input[type="text"]:focus-visible,
-input[type="password"]:focus-visible {
-  border: none;
-  border-bottom: 1px solid var(--accent);
-  background-color: var(--accentwith10opacity);
-  outline: none;
-  box-shadow: none;
-}
+  /* COMPETENCE */
+  #competences {
+    margin-top: calc(1 * var(--rythme));
+  }
+  #competences h2 {
+    margin-top: 0;
+  }
+  #competences-container-for-svg {
+    position: relative;
+  }
+  #competences-container-for-svg::before {
+    position: absolute;
+    content: "";
+    top: 0.4rlh;
+    left: -1.35ch;
+    background-image: url("./triangle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: .8rlh;
+    aspect-ratio: 1;
+  }
+  #competences > * {
+    margin-top: calc(0.25 * var(--rythme));
+  }
 
-input[type="search"]:focus-visible {
-  background-color: var(--accentwith10opacity);
-  box-shadow: none;
-}
+  #competences h3 {
+    font-weight: 500;
+    font-size: calc(0.75 * var(--rythme));
+    line-height: .75rlh;
+  }
 
-@font-face {
-  font-family: "SpaceMono-Regular";
-  src: url("./fonts/SpaceMono-Regular.woff2") format("woff2");
-  font-display: swap;
-}
+  #competences-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--rythme);
+  }
 
-@font-face {
-  font-family: "SpaceGrotesk";
-  src: url("./fonts/SpaceGrotesk[wght].woff2") format("woff2");
-  font-display: swap;
+  #competences-title-to-up {
+    margin-top: calc(0.5 * var(--rythme));
+  }
+
+  /* CERTIF */
+  #certifications {
+    margin-top: calc(2 * var(--rythme));
+  }
+
+  #certifications p {
+    margin-top: calc(0.25*var(--rythme));
+  }
+
+  #certifications-container-for-svg {
+    position: relative;
+  }
+
+  #certifications-container-for-svg::before {
+    position: absolute;
+    content: "";
+    top: 0.4rlh;
+    left: -1.35ch;
+    transform: rotate(90deg);
+    background-image: url("./goutte.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: .8rlh;
+    aspect-ratio: 1;
+  }
+
+  #certifications time {
+    display: block;
+    color: var(--gris);
+    margin-top: calc(0.25 * var(--rythme));
+  }
+
+  :root {
+    --rythme: 1rlh;
+    --bg: oklch(99% 0.006 200);
+    --gris: oklch(50% 0.01 200);
+    --gris2pourcent: oklch(from var(--gris) l c h / 2%);
+    --gris5pourcent: oklch(from var(--gris) l c h / 5%);
+    --gris50pourcent: oklch(from var(--gris) l c h / 50%);
+    --gris80pourcent: oklch(from var(--gris) l c h / 80%);
+    --gris90pourcent: oklch(from var(--gris) l c h / 90%);
+    --red: oklch(40% 0.3 20);
+    --orange: oklch(90% 0.37 85 / 85%);
+    --yellow: oklch(87.82% 0.1933 115.55);
+    --green: oklch(40% 0.3 140);
+    --shadow: oklch(5% 0.02 200 / 15%);
+  }
+
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+
+  /* Inner quote marks, native black white color-scheme, Prevent font size inflation */
+  html {
+    hanging-ponctuation: first last;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Remove default margin in favour of better control in authored CSS */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  /* Set core body defaults */
+  body {
+    font-family: system-ui, "Segoe UI", "Helvetica Neue", sans-serif;
+    min-height: 100dvh;
+  }
+
+  /* Set shorter line heights on headings and text-wrap */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  a {
+    color: currentColor;
+    text-underline-offset: 0.3ex;
+  }
+
+  p,
+  li {
+    line-height: 1.4;
+    text-wrap: pretty;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture,
+  svg,
+  video {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Make sure textareas without a rows attribute are not tiny */
+  textarea:not([rows]) {
+    min-height: 10rem;
+  }
+
+  /* Anything that has been anchored to should have extra scroll margin */
+  :target {
+    scroll-margin-block: 5ex;
+  }
+
+  /* More consistent, styleable hr*/
+  hr {
+    border-width: 1px 0 0 0;
+    color: inherit;
+    height: 0;
+    overflow: visible;
+  }
+
+  /* HIDING VISUALLY BUT ACCESSIBLE */
+  .sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
+
+  input[type="checkbox"] {
+    width: calc(0.6 * var(--rythme)); /* Adjust the width */
+    height: calc(0.6 * var(--rythme)); /* Adjust the height */
+  }
+
+  input[type="search"] {
+    appearance: none;
+    border: none;
+    outline: none;
+  }
+
+  input[type="file"] {
+    appearance: none;
+    border: none;
+    background-color: var(--bg);
+    border-radius: 0.2rem 0.2rem 0 0;
+    transition: all 0.2s ease-out;
+  }
+
+  input[type="date"] {
+    border: 3px ridge transparent;
+    border-radius: 0.2rem;
+    background-color: var(--accentwith10opacity);
+    box-shadow: none;
+    outline: none;
+    padding: calc(0.25 * var(--rythme));
+    color: var(--surface1with90opacity);
+    transition: all 0.2s ease-out;
+  }
+
+  *:focus-visible {
+    transition: all 0.2s ease;
+    border-radius: inherit;
+  }
+
+  input[type="radio"]:focus-visible {
+    box-shadow: none;
+    outline-offset: 4px;
+    outline-color: var(--surface1);
+  }
+
+  input[type="checkbox"]:focus-visible {
+    box-shadow: none;
+    outline-offset: 4px;
+    outline-color: var(--surface1);
+  }
+
+  dialog button:focus-visible {
+    box-shadow: none;
+    outline: 1px ridge var(--accent);
+    outline-offset: 4px;
+    border-radius: 0.4rem;
+  }
+
+  input[type="text"]:focus-visible,
+  input[type="password"]:focus-visible {
+    border: none;
+    border-bottom: 1px solid var(--accent);
+    background-color: var(--accentwith10opacity);
+    outline: none;
+    box-shadow: none;
+  }
+
+  input[type="search"]:focus-visible {
+    background-color: var(--accentwith10opacity);
+    box-shadow: none;
+  }
+
+  @font-face {
+    font-family: "SpaceMono-Regular";
+    src: url("./fonts/SpaceMono-Regular.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "SpaceGrotesk";
+    src: url("./fonts/SpaceGrotesk[wght].woff2") format("woff2");
+    font-display: swap;
+  }
 }
